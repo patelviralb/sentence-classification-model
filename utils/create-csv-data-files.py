@@ -22,17 +22,6 @@ trainingFiles = {
 #     'SearchScreeningEvent':'data-files/json/validate_SearchScreeningEvent.json'
 # }
 
-# Get all unicode characters
-all_chars = (unichr(i) for i in xrange(sys.maxunicode))
-# Get all non printable characters
-control_chars = ''.join(c for c in all_chars if unicodedata.category(c) == 'Cc')
-# Create regex of above characters
-control_char_re = re.compile('[%s]' % re.escape(control_chars))
-# Substitute these characters by empty string in the original string.
-def remove_control_chars(s):
-    return control_char_re.sub('', s)
-print (remove_control_chars('\x00\x01String'))
-
 for source,filePath in trainingFiles.items():
     print("Source: ",source,"\tFile Path: ",filePath)
     with open(filePath) as inputJSONFile:
