@@ -930,8 +930,7 @@ give me the movie times for movies showing in the neighborhood	5
 list movies in the neighbourhood	5
 Give me the movie times at Goodrich Quality Theaters 	5
 Find the movies and movie times in the neighbourhood	5
-what films are playing at the closest movie house ar
- elevenses	5
+what films are playing at the closest movie house ar elevenses	5
 Please show me the films playing at Loews Cineplex Entertainment 	5
 Whats the closest cinema playing Chuckys Baby now 	5
 Is Hollows Grove playing at any movie theatre at ten pm 	5

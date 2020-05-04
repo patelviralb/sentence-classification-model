@@ -44,7 +44,8 @@ def read_file(file_dictionary):
                 data = eachData["data"]
                 text_data = ""
                 for sentenceText in range(len(data)):
-                    text_data = text_data + data[sentenceText]["text"] + " "
+                    text_tag_data=str(data[sentenceText]["text"]).strip()
+                    text_data = text_data + text_tag_data + " "
                 # print(str(text_data).strip())
                 printable_text_data = ''.join(filter(lambda x: x in printable, str(text_data).strip()))
                 filtered_text_data = re.sub(' +', ' ', re.sub('[^\w\s]', '', printable_text_data))
@@ -53,25 +54,25 @@ def read_file(file_dictionary):
 
     return text_file_dictionary
 
-# input_training_json_files = {
-#     'AddToPlaylist':'data-files/json/train_AddToPlaylist_full.json',
-#     'BookRestaurant':'data-files/json/train_BookRestaurant_full.json',
-#     'GetWeather':'data-files/json/train_GetWeather_full.json',
-#     'PlayMusic':'data-files/json/train_PlayMusic_full.json',
-#     'SearchCreativeWork':'data-files/json/train_SearchCreativeWork_full.json',
-#     'SearchScreeningEvent':'data-files/json/train_SearchScreeningEvent_full.json'
-# }
-#
-# input_test_json_files = {
-#     'AddToPlaylist':'data-files/json/validate_AddToPlaylist.json',
-#     'BookRestaurant':'data-files/json/validate_BookRestaurant.json',
-#     'GetWeather':'data-files/json/validate_GetWeather.json',
-#     'PlayMusic':'data-files/json/validate_PlayMusic.json',
-#     'SearchCreativeWork':'data-files/json/validate_SearchCreativeWork.json',
-#     'SearchScreeningEvent':'data-files/json/validate_SearchScreeningEvent.json'
-# }
+input_training_json_files = {
+    'AddToPlaylist':'data-files/json/train_AddToPlaylist_full.json',
+    'BookRestaurant':'data-files/json/train_BookRestaurant_full.json',
+    'GetWeather':'data-files/json/train_GetWeather_full.json',
+    'PlayMusic':'data-files/json/train_PlayMusic_full.json',
+    'SearchCreativeWork':'data-files/json/train_SearchCreativeWork_full.json',
+    'SearchScreeningEvent':'data-files/json/train_SearchScreeningEvent_full.json'
+}
 
-# training_files, testing_files = create_data_files(input_training_json_files, input_test_json_files)
-# print("Finished....")
-# print(training_files)
-# print(testing_files)
+input_test_json_files = {
+    'AddToPlaylist':'data-files/json/validate_AddToPlaylist.json',
+    'BookRestaurant':'data-files/json/validate_BookRestaurant.json',
+    'GetWeather':'data-files/json/validate_GetWeather.json',
+    'PlayMusic':'data-files/json/validate_PlayMusic.json',
+    'SearchCreativeWork':'data-files/json/validate_SearchCreativeWork.json',
+    'SearchScreeningEvent':'data-files/json/validate_SearchScreeningEvent.json'
+}
+
+training_files, testing_files = create_data_files(input_training_json_files, input_test_json_files)
+print("Finished....")
+print(training_files)
+print(testing_files)
