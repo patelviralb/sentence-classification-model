@@ -1,16 +1,13 @@
 import json
 import string
 import re
-import os
+# import os
 
 
 def createDataFiles(inputTrainingJSONFiles, inputTestJSONFiles):
     trainingJSONFiles = inputTrainingJSONFiles
     testJSONFiles = inputTestJSONFiles
 
-    trainingFiles = {}
-    testingFiles = {}
-    
     print ("Started File Conversion....")
     # print ("Working Directory: ",os.getcwd())
     
